@@ -172,6 +172,27 @@ function App() {
             GitHub
           </a>
           <a
+            href="https://github.com/edjo/react-spin-roulette/tree/main/example"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 rounded-lg transition-colors text-white font-medium border-2 border-primary/50"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              />
+            </svg>
+            View Source Code
+          </a>
+          <a
             href="https://www.npmjs.com/package/react-spin-roulette"
             target="_blank"
             rel="noopener noreferrer"
@@ -657,7 +678,16 @@ const hugePrizes = Array.from({ length: 30000 }, (_, i) => ({
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
           >
-            GitHub
+            📦 GitHub Repository
+          </a>
+          <span className="text-gray-700">•</span>
+          <a
+            href="https://github.com/edjo/react-spin-roulette/tree/main/example"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-primary transition-colors font-semibold"
+          >
+            📂 View Source Code
           </a>
           <span className="text-gray-700">•</span>
           <a
@@ -666,7 +696,7 @@ const hugePrizes = Array.from({ length: 30000 }, (_, i) => ({
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
           >
-            npm
+            📥 npm Package
           </a>
           <span className="text-gray-700">•</span>
           <a
@@ -675,7 +705,7 @@ const hugePrizes = Array.from({ length: 30000 }, (_, i) => ({
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
           >
-            Inspired by react-roulette-pro
+            ✨ Inspired by react-roulette-pro
           </a>
         </div>
 

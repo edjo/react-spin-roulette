@@ -7,6 +7,14 @@ A lightweight, performant, and fully type-safe **linear roulette/spinner** compo
 [![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue.svg?style=flat-square)](https://www.typescriptlang.org/)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/react-spin-roulette?style=flat-square)](https://bundlephobia.com/package/react-spin-roulette)
 
+<div align="center">
+  
+### 🎮 [**Try Interactive Examples →**](https://react-spin-roulette.pages.dev/)
+
+**[react-spin-roulette.pages.dev](https://react-spin-roulette.pages.dev/)** - Play with live demos and copy code snippets!
+
+</div>
+
 ---
 
 ## 📋 Table of Contents
@@ -142,9 +150,19 @@ Unlike circular wheel spinners, **React Spin Roulette** works like a **slot mach
 - Smart sampling automatically handles huge datasets (30k+ items)
 - Smooth CSS transform-based animations with GPU acceleration
 
-## 🎬 Live Demo
+## 🎬 Live Demo & Examples
 
-Check out the [**Interactive Demo**](https://react-spin-roulette-demo.vercel.app) to see all features in action!
+🌟 **[Try Interactive Examples →](https://react-spin-roulette.pages.dev/)** 🌟
+
+Visit [**react-spin-roulette.pages.dev**](https://react-spin-roulette.pages.dev/) to:
+
+- 🎮 **Test all features** - Interactive playground with live examples
+- 🎨 **See styling options** - Horizontal/Vertical orientations, custom styles
+- 🎯 **Try custom indicators** - Different pointer designs
+- 📊 **Performance demos** - Test with small and large datasets
+- 💡 **Copy code snippets** - Ready-to-use examples for your project
+
+📂 **[View Example Source Code →](https://github.com/edjo/react-spin-roulette/tree/main/example)** - Complete example app with all demos
 
 ## 🎨 Styling
 
@@ -578,11 +596,12 @@ While inspired by the original concept, this is a completely independent impleme
 
 ## 🔗 Links
 
+- 🎮 [**Interactive Examples**](https://react-spin-roulette.pages.dev/) - Try it live!
+- 📂 [**Example Source Code**](https://github.com/edjo/react-spin-roulette/tree/main/example) - View complete example app
 - 📦 [NPM Package](https://www.npmjs.com/package/react-spin-roulette)
 - 💻 [GitHub Repository](https://github.com/edjo/react-spin-roulette)
 - 🐛 [Issue Tracker](https://github.com/edjo/react-spin-roulette/issues)
 - 📝 [Changelog](CHANGELOG.md)
-- 🎬 [Live Demo](https://react-spin-roulette-demo.vercel.app)
 
 ## 📊 Stats
 

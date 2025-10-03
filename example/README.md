@@ -2,6 +2,12 @@
 
 Interactive demo application showcasing the `react-spin-roulette` component.
 
+## 🌐 Live Demo
+
+🎮 **[View Live Examples](https://react-spin-roulette.pages.dev/)** - Try all demos in your browser!
+
+📂 **[View Source Code on GitHub](https://github.com/edjo/react-spin-roulette/tree/main/example)** - Browse the code
+
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
@@ -34,24 +40,28 @@ The app will open automatically at `http://localhost:3000`
 The demo showcases 4 different examples:
 
 ### 1. **Basic Horizontal Roulette**
+
 - Default horizontal orientation
 - 8 colored prizes
 - 4-second spin duration
 - Winner announcement
 
 ### 2. **Vertical Roulette**
+
 - Vertical orientation
 - 6 prizes
 - 5-second slower animation
 - Different prize size
 
 ### 3. **Custom Prize Rendering**
+
 - Custom `renderPrize` function
 - Emoji-based prizes
 - Point values displayed
 - Gradient backgrounds
 
 ### 4. **Fast Spin Mode**
+
 - Quick 2-second spins
 - 10 prizes
 - Custom easing function
@@ -158,14 +168,17 @@ import type { Prize } from 'react-spin-roulette';
 ## 🐛 Troubleshooting
 
 ### Component not rendering?
+
 - Make sure parent package is built: `cd .. && npm run build`
 - Check that dependencies are installed: `npm install`
 
 ### Types not working?
+
 - Ensure TypeScript is configured correctly
 - Check that `react-spin-roulette` is properly installed
 
 ### Styling issues?
+
 - Verify CSS is loaded
 - Check browser console for errors
 
@@ -178,4 +191,3 @@ import type { Prize } from 'react-spin-roulette';
 ---
 
 Made with ❤️ using React Spin Roulette
-
