@@ -1,33 +1,32 @@
 import { describe, it, expect } from 'vitest';
-import {
-  calculateOffset,
-  validateWinningIndex,
-  generateId,
-  clamp,
-} from './calculations';
+import { calculateOffset, validateWinningIndex, generateId, clamp } from './calculations';
 
 describe('calculateOffset', () => {
   it('calculates correct offset for first prize', () => {
-    const offset = calculateOffset(100, 0, 500);
-    // First prize (index 0) should be centered: 0 - (500-100)/2 = -200
+    // prizeSize: 100, winningIndex: 0, containerSize: 500, prizesLength: 4, minSpins: 0
+    const offset = calculateOffset(100, 0, 500, 4, 0);
+    // With 0 spins: (0 * 100) - (500-100)/2 = 0 - 200 = -200
     expect(offset).toBe(-200);
   });
 
   it('calculates correct offset for middle prize', () => {
-    const offset = calculateOffset(100, 5, 500);
-    // Fifth prize: (100 * 5) - (500-100)/2 = 500 - 200 = 300
+    // prizeSize: 100, winningIndex: 5, containerSize: 500, prizesLength: 10, minSpins: 0
+    const offset = calculateOffset(100, 5, 500, 10, 0);
+    // With 0 spins: (100 * 5) - (500-100)/2 = 500 - 200 = 300
     expect(offset).toBe(300);
   });
 
   it('handles different prize sizes', () => {
-    const offset = calculateOffset(150, 3, 600);
-    // (150 * 3) - (600-150)/2 = 450 - 225 = 225
+    // prizeSize: 150, winningIndex: 3, containerSize: 600, prizesLength: 5, minSpins: 0
+    const offset = calculateOffset(150, 3, 600, 5, 0);
+    // With 0 spins: (150 * 3) - (600-150)/2 = 450 - 225 = 225
     expect(offset).toBe(225);
   });
 
   it('handles edge case with single prize', () => {
-    const offset = calculateOffset(200, 0, 200);
-    // (200 * 0) - (200-200)/2 = 0 - 0 = 0
+    // prizeSize: 200, winningIndex: 0, containerSize: 200, prizesLength: 1, minSpins: 0
+    const offset = calculateOffset(200, 0, 200, 1, 0);
+    // With 0 spins: (200 * 0) - (200-200)/2 = 0 - 0 = 0
     expect(offset).toBe(0);
   });
 });
@@ -46,21 +45,15 @@ describe('validateWinningIndex', () => {
   });
 
   it('throws on index out of bounds', () => {
-    expect(() => validateWinningIndex(5, 5)).toThrow(
-      'winningIndex (5) is out of bounds'
-    );
+    expect(() => validateWinningIndex(5, 5)).toThrow('winningIndex (5) is out of bounds');
     expect(() => validateWinningIndex(10, 5)).toThrow(
       'winningIndex (10) is out of bounds'
     );
   });
 
   it('throws on non-integer index', () => {
-    expect(() => validateWinningIndex(1.5, 5)).toThrow(
-      'winningIndex must be an integer'
-    );
-    expect(() => validateWinningIndex(NaN, 5)).toThrow(
-      'winningIndex must be an integer'
-    );
+    expect(() => validateWinningIndex(1.5, 5)).toThrow('winningIndex must be an integer');
+    expect(() => validateWinningIndex(NaN, 5)).toThrow('winningIndex must be an integer');
   });
 });
 
@@ -104,4 +97,3 @@ describe('clamp', () => {
     expect(clamp(15, 10, 10)).toBe(10);
   });
 });
-

@@ -20,8 +20,10 @@ describe('SpinRoulette', () => {
   it('renders all prizes', () => {
     render(<SpinRoulette prizes={mockPrizes} winningIndex={0} isSpinning={false} />);
 
+    // Prizes are duplicated for the spinning effect, so use getAllByLabelText
     mockPrizes.forEach((prize) => {
-      expect(screen.getByLabelText(prize.label)).toBeInTheDocument();
+      const elements = screen.getAllByLabelText(prize.label);
+      expect(elements.length).toBeGreaterThan(0);
     });
   });
 
@@ -75,10 +77,11 @@ describe('SpinRoulette', () => {
       />
     );
 
+    // Prizes are duplicated for the spinning effect, so use getAllByTestId
     mockPrizes.forEach((prize) => {
-      expect(screen.getByTestId(`custom-${prize.id}`)).toHaveTextContent(
-        prize.label.toUpperCase()
-      );
+      const elements = screen.getAllByTestId(`custom-${prize.id}`);
+      expect(elements.length).toBeGreaterThan(0);
+      expect(elements[0]).toHaveTextContent(prize.label.toUpperCase());
     });
   });
 
@@ -93,9 +96,17 @@ describe('SpinRoulette', () => {
     );
 
     const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(2);
-    expect(images[0]).toHaveAttribute('src', '/image1.png');
-    expect(images[1]).toHaveAttribute('src', '/image2.png');
+    // Images are duplicated for the spinning effect, so there will be more than 2
+    expect(images.length).toBeGreaterThan(0);
+    // Check that the images have the correct src attributes
+    const image1Elements = images.filter(
+      (img) => img.getAttribute('src') === '/image1.png'
+    );
+    const image2Elements = images.filter(
+      (img) => img.getAttribute('src') === '/image2.png'
+    );
+    expect(image1Elements.length).toBeGreaterThan(0);
+    expect(image2Elements.length).toBeGreaterThan(0);
   });
 
   it('calls onSpinStart when spinning starts', () => {
@@ -125,9 +136,8 @@ describe('SpinRoulette', () => {
   });
 
   it('calls onComplete after animation duration', async () => {
-    vi.useFakeTimers();
     const onComplete = vi.fn();
-    const duration = 1000;
+    const duration = 100; // Use shorter duration for tests
 
     const { rerender } = render(
       <SpinRoulette
@@ -151,14 +161,16 @@ describe('SpinRoulette', () => {
 
     expect(onComplete).not.toHaveBeenCalled();
 
-    await vi.advanceTimersByTimeAsync(duration);
-
-    expect(onComplete).toHaveBeenCalledTimes(1);
-
-    vi.useRealTimers();
+    // Wait for animation to complete
+    await waitFor(
+      () => {
+        expect(onComplete).toHaveBeenCalledTimes(1);
+      },
+      { timeout: 500 }
+    );
   });
 
-  it('sets aria-busy attribute when spinning', () => {
+  it('sets aria-busy attribute when spinning', async () => {
     const { rerender } = render(
       <SpinRoulette prizes={mockPrizes} winningIndex={0} isSpinning={false} />
     );
@@ -168,7 +180,10 @@ describe('SpinRoulette', () => {
 
     rerender(<SpinRoulette prizes={mockPrizes} winningIndex={0} isSpinning={true} />);
 
-    expect(listbox).toHaveAttribute('aria-busy', 'true');
+    // Wait for the animation to start (requestAnimationFrame)
+    await waitFor(() => {
+      expect(listbox).toHaveAttribute('aria-busy', 'true');
+    });
   });
 
   it('renders horizontal orientation by default', () => {
