@@ -1,8 +1,8 @@
 {
   "name": "react-spin-roulette",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A lightweight, performant, and type-safe linear roulette/spinner component for React with headless UI support",
-  "author": "Edjo",
+  "author": "Edjo Brandão",
   "license": "MIT",
   "private": false,
   "keywords": [
@@ -18,14 +18,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/react-spin-roulette"
+    "url": "https://github.com/edjo/react-spin-roulette"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/react-spin-roulette/issues"
+    "url": "https://github.com/edjo/react-spin-roulette/issues"
   },
-  "homepage": "https://github.com/yourusername/react-spin-roulette#readme",
+  "homepage": "https://github.com/edjo/react-spin-roulette#readme",
+  "type": "module",
   "main": "./dist/index.cjs",
-  "source": "./src/index.ts",
+  "module": "./dist/index.mjs",
   "types": "./dist/types/index.d.ts",
   "files": [
     "dist",
