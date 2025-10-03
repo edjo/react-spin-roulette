@@ -1,0 +1,6 @@
+/* This file is now mostly handled by Tailwind CSS */
+/* Keep only custom utilities that Tailwind doesn't provide */
+
+.border-3 {
+  border-width: 3px;
+}

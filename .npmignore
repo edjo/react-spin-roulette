@@ -1,0 +1,47 @@
+# Source files
+src/
+
+# Tests
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+src/test/
+
+# Config files
+.eslintrc.json
+.prettierrc
+tsconfig.json
+vite.config.ts
+vitest.config.ts
+
+# Development files
+.git/
+.github/
+.vscode/
+.idea/
+*.log
+node_modules/
+
+# Documentation (keep only essential)
+CONTRIBUTING.md
+CHANGELOG.md
+
+# CI/CD
+.travis.yml
+.circleci/
+.github/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Keep only
+!dist/
+!README.md
+!LICENSE
+!package.json
+
