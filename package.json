@@ -1,6 +1,6 @@
 {
   "name": "react-spin-roulette",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight, performant, and type-safe linear roulette/spinner component for React with headless UI support",
   "author": "Edjo",
   "license": "MIT",
